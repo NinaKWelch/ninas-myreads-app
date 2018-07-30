@@ -1,11 +1,12 @@
-# ninas-myreads-app
+# Ninas Myreads App
+
  Udacity Front-End Web Development Nanodegree Project 7 - MyReads: A Book Tracking App
 
+# Website
 
-## Website
+[https://ninakwelch.github.io/ninas-myreads-app/](https://ninakwelch.github.io/ninas-myreads-app/)
 
-
-## Starter Template
+# Starter Template
 
 Starter Template can be loaded form [here](https://github.com/udacity/reactnd-project-myreads-starter). The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. Your job will be to add interactivity to the app by refactoring the static code in this template.
 
