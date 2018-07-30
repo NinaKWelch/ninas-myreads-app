@@ -4,7 +4,7 @@
 
 # Website
 
-[https://ninakwelch.github.io/ninas-myreads-app/](https://ninakwelch.github.io/ninas-myreads-app/)
+[https://ninakwelch.github.io/ninas-myreads-app](https://ninakwelch.github.io/ninas-myreads-app)
 
 # Starter Template
 
