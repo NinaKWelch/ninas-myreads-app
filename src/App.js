@@ -7,10 +7,9 @@ import ListBooks from './ListBooks'
 
 
 class BooksApp extends React.Component {
-  state = {
-  }
 
   render() {
+
     return (
       <div className="app">
         <Route exact path="/search" render={() => <SearchBooks/>}/>

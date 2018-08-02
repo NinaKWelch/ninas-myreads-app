@@ -10,6 +10,8 @@ class Book extends React.Component {
 			backgroundImage: ''
   		}
 
+  		const book = '';
+
     	return (
 			<li>
 	        	<div className="book">
@@ -25,8 +27,8 @@ class Book extends React.Component {
               			</select>
 	            		</div>
 	          		</div>
-	          		<div className="book-title">Title</div>
-	          		<div className="book-authors">Author</div>
+	          		<div className="book-title">{this.props.book.name}</div>
+	          		<div className="book-authors">{this.props.book.author}</div>
 	        	</div>
 	     	</li>
     	)

@@ -3,9 +3,15 @@ import { Link } from 'react-router-dom'
 import Book from './Book'
 
 class ListBooks extends React.Component {
-
+  state = {
+    books: [
+         {name: 'Book 1', author: 'Author 1', id: 1},
+         {name: 'Book 2', author: 'Author 2', id: 2},
+         {name: 'Book 3', author: 'Author 3', id: 3}]
+    }
 
   render() {
+
     return (
       <div className="list-books">
         <div className="list-books-title">
@@ -17,7 +23,9 @@ class ListBooks extends React.Component {
               <h2 className="bookshelf-title">Currently Reading</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
-                  <Book/>
+                  {this.state.books.map((book) => (
+                    <Book key={book.id} book={book}/>
+                  ))}
                 </ol>
               </div>
             </div>
@@ -25,7 +33,9 @@ class ListBooks extends React.Component {
               <h2 className="bookshelf-title">Want to Read</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
-                  <Book/>
+                  {this.state.books.map((book) => (
+                    <Book key={book.id} book={book}/>
+                  ))}
                 </ol>
               </div>
             </div>
@@ -33,7 +43,9 @@ class ListBooks extends React.Component {
               <h2 className="bookshelf-title">Read</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
-                  <Book/>
+                  {this.state.books.map((book) => (
+                    <Book key={book.id} book={book}/>
+                  ))}
                 </ol>
               </div>
             </div>
