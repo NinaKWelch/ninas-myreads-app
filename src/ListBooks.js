@@ -1,14 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Book from './Book'
+import * as BooksAPI from './BooksAPI'
 
 class ListBooks extends React.Component {
   state = {
-    books: [
-         {name: 'Book 1', author: 'Author 1', id: 1},
-         {name: 'Book 2', author: 'Author 2', id: 2},
-         {name: 'Book 3', author: 'Author 3', id: 3}]
-    }
+    books: []
+  }
+
+  //lifecycle event for API requests
+  componentDidMount() {
+    BooksAPI.getAll().then((books) => {
+      this.setState({ books })
+    })
+  }
 
   render() {
 

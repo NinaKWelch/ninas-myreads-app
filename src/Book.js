@@ -1,16 +1,24 @@
 import React from 'react'
 
 class Book extends React.Component {
+  	state = {
+  		shelf: 'none'
+  	}
 
+  	changeShelf = (event) => {
+  		this.setState({
+  			shelf: event.target.value
+  		});
+  	}
 
   	render() {
   		const style = {
 			width: 128,
 			height: 193,
-			backgroundImage: ''
+			backgroundImage: 'url(${this.props.book.imageLinks.thumbnail})'
   		}
 
-  		const book = '';
+  		//const book = {}
 
     	return (
 			<li>
@@ -18,7 +26,7 @@ class Book extends React.Component {
 	          		<div className="book-top">
 	            		<div className="book-cover" style={style}></div>
             			<div className="book-shelf-changer">
-              			<select>
+              			<select onChange={this.changeShelf} value={this.state.shelf}>
                 			<option value="move" disabled>Move to...</option>
                 			<option value="currentlyReading">Currently Reading</option>
                 			<option value="wantToRead">Want to Read</option>
@@ -27,8 +35,8 @@ class Book extends React.Component {
               			</select>
 	            		</div>
 	          		</div>
-	          		<div className="book-title">{this.props.book.name}</div>
-	          		<div className="book-authors">{this.props.book.author}</div>
+	          		<div className="book-title">{this.props.book.title}</div>
+	          		<div className="book-authors">{this.props.book.authors}</div>
 	        	</div>
 	     	</li>
     	)
