@@ -1,97 +1,41 @@
-# Ninas Myreads App
+# Ninas MyReads App
 
  Udacity Front-End Web Development Nanodegree Project 7 - MyReads: A Book Tracking App
 
-# Website
+## Description
 
-[https://ninakwelch.github.io/ninas-myreads-app](https://ninakwelch.github.io/ninas-myreads-app)
+My Reads app will let you search books and add them to three shelves: Currently Reading, Want To Read and Read.
 
-# Starter Template
+The search terms are limited to ones found in [SEARCH_TERMS.md](SEARCH_TERMS.md)
 
-Starter Template can be loaded form [here](https://github.com/udacity/reactnd-project-myreads-starter). The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. Your job will be to add interactivity to the app by refactoring the static code in this template.
+You can move the books from one shelf to another or remove them altogeher.
 
-## TL;DR
+## Screenshots
 
-To get started developing right away:
+![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533500097/myreads_1_rxgoun.png) 
+![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533500085/myreads_3_q2lg4c.png) 
+![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533497131/myreads_2_ufxj4v.png)
 
-* install all project dependencies with `npm install`
-* start the development server with `npm start`
+## How to Install
 
-## What You're Getting
+1. Clone or Download the project files
+2. Run `npm install` to install dependencies
+3. Run `npm start` to view
 
-```bash
-├── CONTRIBUTING.md
-├── README.md - This file.
-├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
-├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
-├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
-│   └── index.html # DO NOT MODIFY
-└── src
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
-    ├── App.js # This is the root of your app. Contains static HTML right now.
-    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
-    ├── icons # Helpful images for your app. Use at your discretion.
-    │   ├── add.svg
-    │   ├── arrow-back.svg
-    │   └── arrow-drop-down.svg
-    ├── index.css # Global styles. You probably won't need to change anything here.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
-```
+## How I built this
 
-Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
+There is a step by step guide to how I built this project at [my wiki page](https://github.com/NinaKWelch/ninas-myreads-app/wiki/Step-by-Step-Guide).
 
+## TODO
 
-## Backend Server
+* Add more components: SearchBooks, ListBooks and BookShelf
 
-To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
+## Resources
 
-* [`getAll`](#getall)
-* [`update`](#update)
-* [`search`](#search)
+* [React Step by Step](https://reactjs.org/docs/hello-world.html)
+* [Fetching API Data](https://blog.hellojs.org/fetching-api-data-with-react-js-460fe8bbf8f2)
+* [FEND P7: My Reads: A Book Tracking App with Edoh](https://www.youtube.com/watch?time_continue=2959&v=PF8fCAKR0-I)
 
-### `getAll`
+## Starter Template
 
-Method Signature:
-
-```js
-getAll()
-```
-
-* Returns a Promise which resolves to a JSON object containing a collection of book objects.
-* This collection represents the books currently in the bookshelves in your app.
-
-### `update`
-
-Method Signature:
-
-```js
-update(book, shelf)
-```
-
-* book: `<Object>` containing at minimum an `id` attribute
-* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]
-* Returns a Promise which resolves to a JSON object containing the response data of the POST request
-
-### `search`
-
-Method Signature:
-
-```js
-search(query)
-```
-
-* query: `<String>`
-* Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
-* These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
-
-
-## Important
-
-The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
-
-## Links
-
-* [Create React App](https://github.com/facebookincubator/create-react-app)
-* [How to perform common tasks](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)
+Starter Template can be loaded form [here](https://github.com/udacity/reactnd-project-myreads-starter). 
