@@ -70,7 +70,7 @@ class BooksApp extends React.Component {
 
     return (
       <div className="app">
-        <Route exact path="/search" render={() => (
+        <Route exact path="/search" render={({}) => (
           <div className="search-books">
             <div className="search-books-bar">
               <Link className="close-search" to="/">Close</Link>
