@@ -17,7 +17,7 @@ class BooksApp extends React.Component {
   //fetch books
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
-      this.setState({ books })
+    this.setState({ books })
     })
   }
 
@@ -59,10 +59,10 @@ class BooksApp extends React.Component {
     //only when search has input and there is at least one match
     //show no results when there is no input or matches
     if (query && bookSearch.length) {
-        const match = new RegExp(escapeRegExp(query), 'i')
-        bookSearchResults = bookSearch.filter((book) => match.test(book.title, book.authors))
+      const match = new RegExp(escapeRegExp(query), 'i')
+      bookSearchResults = bookSearch.filter((book) => match.test(book.title, book.authors))
     } else {
-        bookSearchResults = []
+      bookSearchResults = []
     }
 
     //sort search results alphabetically by book title
@@ -81,16 +81,16 @@ class BooksApp extends React.Component {
                   value={query}
                   onChange={(event) => this.updateQuery(event.target.value)}
                 />
-
               </div>
             </div>
             <div className="search-books-results">
               <ol className="books-grid">
                 {bookSearchResults.map(book => (<Book key={book.id} book={book} updateBookShelf={this.updateBookShelf}/> ))}
-             </ol>
+              </ol>
             </div>
           </div>
         )}/>
+
         <Route exact path="/" render={() => (
           <div className="list-books">
             <div className="list-books-title">
@@ -110,7 +110,7 @@ class BooksApp extends React.Component {
                   <h2 className="bookshelf-title">Want to Read</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
-                       {books.filter(book => book.shelf === 'wantToRead').map(book => (<Book key={book.id} book={book} updateBookShelf={this.updateBookShelf}/>))}
+                      {books.filter(book => book.shelf === 'wantToRead').map(book => (<Book key={book.id} book={book} updateBookShelf={this.updateBookShelf}/>))}
                     </ol>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ class BooksApp extends React.Component {
                   <h2 className="bookshelf-title">Read</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
-                       {books.filter(book => book.shelf === 'read').map(book => (<Book key={book.id} book={book} updateBookShelf={this.updateBookShelf}/>))}
+                      {books.filter(book => book.shelf === 'read').map(book => (<Book key={book.id} book={book} updateBookShelf={this.updateBookShelf}/>))}
                     </ol>
                   </div>
                 </div>

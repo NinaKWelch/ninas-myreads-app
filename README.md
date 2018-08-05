@@ -4,7 +4,7 @@
 
 ## Description
 
-My Reads app will let you search books and add them to three shelves: Currently Reading, Want To Read and Read.
+MyReads App will let you search books and add them to three shelves: Currently Reading, Want To Read and Read.
 
 The search terms are limited to ones found in [SEARCH_TERMS.md](SEARCH_TERMS.md)
 
@@ -12,8 +12,8 @@ You can move the books from one shelf to another or remove them altogeher.
 
 ## Screenshots
 
-![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533500097/myreads_1_rxgoun.png) 
-![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533500085/myreads_3_q2lg4c.png) 
+![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533500097/myreads_1_rxgoun.png)
+![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533500085/myreads_3_q2lg4c.png)
 ![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533497131/myreads_2_ufxj4v.png)
 
 ## How to Install
@@ -22,7 +22,7 @@ You can move the books from one shelf to another or remove them altogeher.
 2. Run `npm install` to install dependencies
 3. Run `npm start` to view
 
-## How I built this
+## How I Built This
 
 There is a step by step guide to how I built this project at [my wiki page](https://github.com/NinaKWelch/ninas-myreads-app/wiki/Step-by-Step-Guide).
 
@@ -38,4 +38,4 @@ There is a step by step guide to how I built this project at [my wiki page](http
 
 ## Starter Template
 
-Starter Template can be loaded form [here](https://github.com/udacity/reactnd-project-myreads-starter). 
+Starter Template can be loaded form [here](https://github.com/udacity/reactnd-project-myreads-starter).
