@@ -9,48 +9,64 @@ import Book from './Book'
 class BooksApp extends React.Component {
   state = {
     books: [],
-    query: ''
+    query: '',
+    bookSearch: []
   }
 
   //lifecycle event for API requests
+  //fetch books
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
     })
   }
 
-  //upadate the search
+  //update search to match the input
   updateQuery = (query) => {
     this.setState({
-      query: query.trim()
+      query: query
     })
+
+    //show matching books form API
+    //if search field has input
+    if (query) {
+      BooksAPI.search(query).then((books) => {
+        this.setState(state => ({
+          bookSearch: books
+        }))
+      })
+    }
   }
 
-  //move book to another shelf
+  //move books to designated shelves
   updateBookShelf = (book, shelf) => {
-    BooksAPI.update(book, shelf).then((data) => {
+    BooksAPI.update(book, shelf).then(() => {
+      //assign current shelf
       book.shelf = shelf
       this.setState(state => ({
-        //books: state.books.filter(b => b.id !== book.id).concat([book])
+        //move book to the shelf if it is not on the shelf
+        books: state.books.filter(b => b.id !== book.id).concat([book])
       }))
     })
   }
 
   render() {
-    const { books, query } = this.state
+    const { books, query, bookSearch } = this.state
 
     //variable for search results
     let bookSearchResults
 
     //show search results by book title or authors
-    if (query) {
+    //only when search has input and there is at least one match
+    if (query && bookSearch.length) {
         const match = new RegExp(escapeRegExp(query), 'i')
-        bookSearchResults = books.filter((book) => match.test(book.title, book.authors))
+        bookSearchResults = bookSearch.filter((book) => match.test(book.title, book.authors))
     } else {
-        bookSearchResults = books
+        //show no results when there is no input or matches
+        bookSearchResults = []
     }
 
-    //sort search results by book title
+    //sort search results alphabetically by book title
     bookSearchResults.sort(sortBy('title'))
 
     return (
