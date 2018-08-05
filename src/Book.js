@@ -1,9 +1,8 @@
 import React from 'react'
-//import BookShelfChanger from './BookShelfChanger'
 
 class Book extends React.Component {
   state = {
-    shelf: 'none'
+  shelf: 'none'
   }
 
   componentDidMount() {
@@ -14,17 +13,17 @@ class Book extends React.Component {
 
   //set the state of the shelf to the current shelf
   changeShelf = (event) => {
-      //set the state to selected shelf
-      this.setState({
-        shelf: event.target.value
-      })
+    //set the state to selected shelf
+    this.setState({
+      shelf: event.target.value
+    })
 
-      //pass the new state as an argument to updateBookShelf function
-      this.props.updateBookShelf(this.props.book, event.target.value)
+    //pass the new state as an argument to updateBookShelf function
+    this.props.updateBookShelf(this.props.book, event.target.value)
   }
 
-	render() {
-		const { book } = this.props
+  render() {
+    const { book } = this.props
     const { shelf } = this.state
 
     //style for the book image
@@ -34,7 +33,7 @@ class Book extends React.Component {
       backgroundImage: book.imageLinks ? `url(${book.imageLinks.thumbnail})` : ``
     }
 
-		return (
+    return (
       <li>
         <div className="book">
           <div className="book-top">
@@ -53,8 +52,8 @@ class Book extends React.Component {
           <div className="book-authors">{book.authors ? book.authors.toString() : ''}</div>
         </div>
       </li>
-		)
-	}
+    )
+  }
 }
 
 export default Book
