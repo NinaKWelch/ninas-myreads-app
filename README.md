@@ -22,6 +22,10 @@ You can move the books from one shelf to another or remove them altogeher.
 2. Run `npm install` to install dependencies
 3. Run `npm start` to view
 
+## How I built this
+
+There is a step by step guide to how I built this project at [my wiki page](https://github.com/NinaKWelch/ninas-myreads-app/wiki/Step-by-Step-Guide).
+
 ## TODO
 
 * Add more components: SearchBooks, ListBooks and BookShelf
