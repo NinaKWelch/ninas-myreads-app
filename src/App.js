@@ -38,13 +38,12 @@ class BooksApp extends React.Component {
     }
   }
 
-  //move books to designated shelves
+  //udate shelf to current shelf in the API
+  //set the state of the book to current shelf
   updateBookShelf = (book, shelf) => {
     BooksAPI.update(book, shelf).then(() => {
-      //assign current shelf
       book.shelf = shelf
       this.setState(state => ({
-        //move book to the shelf if it is not on the shelf
         books: state.books.filter(b => b.id !== book.id).concat([book])
       }))
     })
@@ -58,11 +57,11 @@ class BooksApp extends React.Component {
 
     //show search results by book title or authors
     //only when search has input and there is at least one match
+    //show no results when there is no input or matches
     if (query && bookSearch.length) {
         const match = new RegExp(escapeRegExp(query), 'i')
         bookSearchResults = bookSearch.filter((book) => match.test(book.title, book.authors))
     } else {
-        //show no results when there is no input or matches
         bookSearchResults = []
     }
 

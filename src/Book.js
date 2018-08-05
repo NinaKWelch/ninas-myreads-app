@@ -18,6 +18,7 @@ class Book extends React.Component {
       this.setState({
         shelf: event.target.value
       })
+
       //pass the new state as an argument to updateBookShelf function
       this.props.updateBookShelf(this.props.book, event.target.value)
   }
@@ -30,7 +31,7 @@ class Book extends React.Component {
     const style = {
       width: 128,
       height: 193,
-      backgroundImage: 'url(${book.imageLinks.thumbnail})'
+      backgroundImage: book.imageLinks ? `url(${book.imageLinks.thumbnail})` : ``
     }
 
 		return (
