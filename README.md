@@ -5,13 +5,16 @@
 ## Description
 
 My Reads app will let you search books and add them to three shelves: Currently Reading, Want To Read and Read.
+
 The search terms are limited to ones found in [SEARCH_TERMS.md](SEARCH_TERMS.md)
 
-You can move the books from one shelf to another.
+You can move the books from one shelf to another or remove them altogeher.
 
 ## Screenshots
 
-![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533497120/myreads_1_ymntov.png) ![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533497131/myreads_2_ufxj4v.png)
+![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533500097/myreads_1_rxgoun.png) 
+![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533500085/myreads_3_q2lg4c.png) 
+![] (http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533497131/myreads_2_ufxj4v.png)
 
 ## How to Install
 
