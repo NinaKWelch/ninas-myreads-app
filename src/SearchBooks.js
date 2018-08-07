@@ -50,7 +50,7 @@ class SearchBooks extends React.Component {
         </div>
         <div className="search-books-results">
           <ol className="books-grid">
-            {bookSearch.map(book => (<Book key={book.id} book={book} updateBookShelf={updateBookShelf}/> ))}
+            {bookSearch.map(book => (<Book key={book.id} book={book} updateBookShelf={updateBookShelf}/>))}
           </ol>
         </div>
       </div>
