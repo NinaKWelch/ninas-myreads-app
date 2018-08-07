@@ -1,41 +1,20 @@
 import React from 'react'
 import * as BooksAPI from './BooksAPI'
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import './App.css'
-import escapeRegExp from 'escape-string-regexp'
-import sortBy from 'sort-by'
-import Book from './Book'
+import SearchBooks from './SearchBooks'
+import ListBooks from './ListBooks'
 
 class BooksApp extends React.Component {
   state = {
-    books: [],
-    query: '',
-    bookSearch: []
+    books: []
   }
 
-  //lifecycle event for API requests
-  //fetch books
+  //fetch books from the API
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
-    this.setState({ books })
+      this.setState({ books })
     })
-  }
-
-  //update search to match the input
-  updateQuery = (query) => {
-    this.setState({
-      query: query
-    })
-
-    //show matching books form API
-    //if search field has input
-    if (query) {
-      BooksAPI.search(query).then((books) => {
-        this.setState(state => ({
-          bookSearch: books
-        }))
-      })
-    }
   }
 
   //udate shelf to current shelf in the API
@@ -50,85 +29,16 @@ class BooksApp extends React.Component {
   }
 
   render() {
-    const { books, query, bookSearch } = this.state
-
-    //variable for search results
-    let bookSearchResults
-
-    //show search results by book title or authors
-    //only when search has input and there is at least one match
-    //show no results when there is no input or matches
-    if (query && bookSearch.length) {
-      const match = new RegExp(escapeRegExp(query), 'i')
-      bookSearchResults = bookSearch.filter((book) => match.test(book.title, book.authors))
-    } else {
-      bookSearchResults = []
-    }
-
-    //sort search results alphabetically by book title
-    bookSearchResults.sort(sortBy('title'))
+    const { books } = this.state
 
     return (
       <div className="app">
-        <Route exact path="/search" render={({}) => (
-          <div className="search-books">
-            <div className="search-books-bar">
-              <Link className="close-search" to="/">Close</Link>
-              <div className="search-books-input-wrapper">
-                {}
-                <input type="text"
-                  placeholder="Search by title or author"
-                  value={query}
-                  onChange={(event) => this.updateQuery(event.target.value)}
-                />
-              </div>
-            </div>
-            <div className="search-books-results">
-              <ol className="books-grid">
-                {bookSearchResults.map(book => (<Book key={book.id} book={book} updateBookShelf={this.updateBookShelf}/> ))}
-              </ol>
-            </div>
-          </div>
-        )}/>
-
+        <Route exact path="/search" render={() => (
+          <SearchBooks books={books} updateBookShelf={this.updateBookShelf}/>
+          )}/>
         <Route exact path="/" render={() => (
-          <div className="list-books">
-            <div className="list-books-title">
-              <h1>MyReads</h1>
-            </div>
-            <div className="list-books-content">
-              <div>
-                <div className="bookshelf">
-                  <h2 className="bookshelf-title">Currently Reading</h2>
-                  <div className="bookshelf-books">
-                    <ol className="books-grid">
-                      {books.filter(book => book.shelf === 'currentlyReading').map(book => (<Book key={book.id} book={book} updateBookShelf={this.updateBookShelf}/>))}
-                    </ol>
-                  </div>
-                </div>
-                <div className="bookshelf">
-                  <h2 className="bookshelf-title">Want to Read</h2>
-                  <div className="bookshelf-books">
-                    <ol className="books-grid">
-                      {books.filter(book => book.shelf === 'wantToRead').map(book => (<Book key={book.id} book={book} updateBookShelf={this.updateBookShelf}/>))}
-                    </ol>
-                  </div>
-                </div>
-                <div className="bookshelf">
-                  <h2 className="bookshelf-title">Read</h2>
-                  <div className="bookshelf-books">
-                    <ol className="books-grid">
-                      {books.filter(book => book.shelf === 'read').map(book => (<Book key={book.id} book={book} updateBookShelf={this.updateBookShelf}/>))}
-                    </ol>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="open-search">
-              <Link to="search">Add a book</Link>
-            </div>
-          </div>
-        )}/>
+          <ListBooks books={books} updateBookShelf={this.updateBookShelf}/>
+          )}/>
       </div>
     )
   }
