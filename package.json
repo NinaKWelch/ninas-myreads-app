@@ -2,6 +2,7 @@
   "dependencies": {
     "escape-string-regexp": "^2.0.0",
     "form-serialize": "^0.7.2",
+    "gh-pages": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -12,10 +13,25 @@
   "devDependencies": {
     "react-scripts": "^3.0.1"
   },
+  "homepage": "https://ninakwelch.github.io/ninas-myreads-app",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
