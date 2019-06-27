@@ -14,6 +14,8 @@ You can move the books from one shelf to another or remove them altogeher.
 
 [https://ninakwelch.github.io/ninas-myreads-app](https://ninakwelch.github.io/ninas-myreads-app)
 
+Doesn't work at the moment, because GitHub pages doesn't support routers that use the HTML5 pushState history API under the hood (for example, React Router using browserHistory). Check for workarounds [here](https://facebook.github.io/create-react-app/docs/deployment#notes-on-client-side-routing).
+
 ## Screenshots
 
 ![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533500097/myreads_1_rxgoun.png)
