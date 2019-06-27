@@ -1,16 +1,16 @@
 {
   "dependencies": {
-    "escape-string-regexp": "^1.0.5",
+    "escape-string-regexp": "^2.0.0",
     "form-serialize": "^0.7.2",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-image-input": "^0.1.0",
-    "react-router-dom": "^4.3.1",
+    "react-router-dom": "^5.0.1",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
-    "react-scripts": "1.1.4"
+    "react-scripts": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
