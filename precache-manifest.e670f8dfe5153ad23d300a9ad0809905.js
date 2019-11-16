@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "febfd2f89d01dc1877142b18b1d48412",
+    "revision": "bf017541ddb6ee322a166871b4ecd6ac",
     "url": "/ninas-myreads-app/index.html"
   },
   {
-    "revision": "64dbc668b2275c7c6da4",
+    "revision": "fc7944211088c5560f96",
     "url": "/ninas-myreads-app/static/css/main.ad4cd55d.chunk.css"
   },
   {
-    "revision": "1fc1755519c2ce43fbcf",
-    "url": "/ninas-myreads-app/static/js/2.6d1ad55d.chunk.js"
+    "revision": "071a03e6f3d5c3cccafb",
+    "url": "/ninas-myreads-app/static/js/2.7f69158e.chunk.js"
   },
   {
-    "revision": "64dbc668b2275c7c6da4",
-    "url": "/ninas-myreads-app/static/js/main.2ab39c94.chunk.js"
+    "revision": "fc7944211088c5560f96",
+    "url": "/ninas-myreads-app/static/js/main.2f6ee91d.chunk.js"
   },
   {
-    "revision": "925f599c0cb6be6db7fa",
-    "url": "/ninas-myreads-app/static/js/runtime~main.ea4c8138.js"
+    "revision": "73d1389a256648c4caac",
+    "url": "/ninas-myreads-app/static/js/runtime-main.3124e1bb.js"
   },
   {
     "revision": "bb9363b86b02777d23523851826414e0",

@@ -1,16 +1,22 @@
 {
   "files": {
     "main.css": "/ninas-myreads-app/static/css/main.ad4cd55d.chunk.css",
-    "main.js": "/ninas-myreads-app/static/js/main.2ab39c94.chunk.js",
-    "main.js.map": "/ninas-myreads-app/static/js/main.2ab39c94.chunk.js.map",
-    "runtime~main.js": "/ninas-myreads-app/static/js/runtime~main.ea4c8138.js",
-    "runtime~main.js.map": "/ninas-myreads-app/static/js/runtime~main.ea4c8138.js.map",
-    "static/js/2.6d1ad55d.chunk.js": "/ninas-myreads-app/static/js/2.6d1ad55d.chunk.js",
-    "static/js/2.6d1ad55d.chunk.js.map": "/ninas-myreads-app/static/js/2.6d1ad55d.chunk.js.map",
+    "main.js": "/ninas-myreads-app/static/js/main.2f6ee91d.chunk.js",
+    "main.js.map": "/ninas-myreads-app/static/js/main.2f6ee91d.chunk.js.map",
+    "runtime-main.js": "/ninas-myreads-app/static/js/runtime-main.3124e1bb.js",
+    "runtime-main.js.map": "/ninas-myreads-app/static/js/runtime-main.3124e1bb.js.map",
+    "static/js/2.7f69158e.chunk.js": "/ninas-myreads-app/static/js/2.7f69158e.chunk.js",
+    "static/js/2.7f69158e.chunk.js.map": "/ninas-myreads-app/static/js/2.7f69158e.chunk.js.map",
     "index.html": "/ninas-myreads-app/index.html",
-    "precache-manifest.d1a489db5d64979217c0a12db65a60cb.js": "/ninas-myreads-app/precache-manifest.d1a489db5d64979217c0a12db65a60cb.js",
+    "precache-manifest.e670f8dfe5153ad23d300a9ad0809905.js": "/ninas-myreads-app/precache-manifest.e670f8dfe5153ad23d300a9ad0809905.js",
     "service-worker.js": "/ninas-myreads-app/service-worker.js",
     "static/css/main.ad4cd55d.chunk.css.map": "/ninas-myreads-app/static/css/main.ad4cd55d.chunk.css.map",
     "static/media/App.css": "/ninas-myreads-app/static/media/arrow-drop-down.78c6f53b.svg"
-  }
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3124e1bb.js",
+    "static/js/2.7f69158e.chunk.js",
+    "static/css/main.ad4cd55d.chunk.css",
+    "static/js/main.2f6ee91d.chunk.js"
+  ]
 }
