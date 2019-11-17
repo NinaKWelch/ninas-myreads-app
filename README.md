@@ -14,7 +14,7 @@ You can move the books from one shelf to another or remove them altogeher.
 
 [https://rocky-woodland-41546.herokuapp.com/](https://rocky-woodland-41546.herokuapp.com/)
 
-Deployment of create-react-app on Heroku can be doen with zero configuration. More info [here](https://blog.heroku.com/deploying-react-with-zero-configuration).
+Create-react-app can be deployed on Heroku with zero configuration. More info [here](https://blog.heroku.com/deploying-react-with-zero-configuration).
 
 GitHub pages don't support routers that use the HTML5 pushState history API under the hood (for example, React Router using browserHistory). Check for workarounds [here](https://facebook.github.io/create-react-app/docs/deployment#notes-on-client-side-routing).
 
