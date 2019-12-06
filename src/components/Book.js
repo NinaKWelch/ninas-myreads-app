@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import SelectShelf from './SelectShelf'
 
 class Book extends Component {
   constructor(props) {
@@ -44,25 +45,13 @@ class Book extends Component {
           <div className="book-top">
             <div className="book-cover" style={imgStyle} />
 
-            <div className="book-shelf-changer">
-              <select value={shelf} onChange={this.changeShelf}>
-                <option value="move" label="Move to..." disabled />
-
-                <option value="currentlyReading" label="Currently Reading" />
-
-                <option value="wantToRead" label="Want to Read" />
-
-                <option value="read" label="Read" />
-
-                <option value="none" label="None" />
-              </select>
-            </div>
+            <SelectShelf shelf={shelf} handleChange={this.changeShelf} />
           </div>
 
           <div className="book-title">{book.title}</div>
 
           <div className="book-authors">
-            {book.authors ? book.authors.toString() : ''}
+            {book.authors ? book.authors.map(author => <span key={author}>{author}<br/></span>) : ''}
           </div>
         </div>
       </li>

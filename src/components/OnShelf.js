@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Book from './Book'
-import reader from './icons/book-reader.svg'
+import reader from '../icons/book-reader.svg'
 
 const OnShelf = ({ bookShelf, books, updateBookShelf }) => {
   const arrangeBooks = shelf => {

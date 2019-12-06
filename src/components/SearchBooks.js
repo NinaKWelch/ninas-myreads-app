@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from '../BooksAPI'
 import Book from './Book'
-import reader from './icons/book-reader.svg'
+import reader from '../icons/book-reader.svg'
 
 class SearchBooks extends Component {
   constructor(props) {
