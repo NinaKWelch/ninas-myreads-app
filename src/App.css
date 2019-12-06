@@ -103,6 +103,17 @@ body, .app {
   padding: 80px 10px 20px;
 }
 
+.search-books-filler {
+  margin-top: 100px;
+  text-align: center;
+
+}
+
+.search-books-filler-icon {
+  width: 128px;
+  height: 193px;
+}
+
 /* books grid */
 
 .books-grid {
@@ -130,7 +141,7 @@ body, .app {
   margin-top: 10px;
 }
 .book-authors {
-  color: #999;
+  color: #666;
 }
 
 .book-top {

@@ -6,25 +6,33 @@
     "type": "git",
     "url": "git+https://github.com/NinaKWelch/ninas-myreads-app.git"
   },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "escape-string-regexp": "^2.0.0",
     "form-serialize": "^0.7.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-scripts": "^3.3.0",
     "react-image-input": "^0.1.0",
     "react-router-dom": "^5.0.1",
     "sort-by": "^1.2.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.3"
   },
   "devDependencies": {
-    "react-scripts": "^3.2.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "prettier": "^1.19.1"
   },
   "browserslist": {
     "production": [

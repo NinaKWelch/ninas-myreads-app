@@ -1,11 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import BookShelf from './BookShelf'
+import OnShelf from './OnShelf'
 
-class SearchBooks extends React.Component {
-  render() {
-    const { books, updateBookShelf } = this.props
-
+const SearchBooks = ({ books, updateBookShelf }) => {
     const shelves = [
       {title: 'Currently Reading', name: 'currentlyReading'},
       {title: 'Want to Read', name: 'wantToRead'},
@@ -20,10 +18,10 @@ class SearchBooks extends React.Component {
         
         <div className="list-books-content">
           <div>
-            {shelves.map(thisShelf => (
-              <BookShelf
-                key={thisShelf.name}
-                thisShelf={thisShelf}
+            {shelves.map(shelf => (
+              <OnShelf
+                key={shelf.name}
+                bookShelf={shelf}
                 books={books}
                 updateBookShelf={updateBookShelf}
               />
@@ -38,7 +36,11 @@ class SearchBooks extends React.Component {
         </div>
       </div>
     )
-  }
+}
+
+SearchBooks.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.object).isRequired, 
+  updateBookShelf: PropTypes.func.isRequired
 }
 
 export default SearchBooks

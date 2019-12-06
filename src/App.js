@@ -1,30 +1,29 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
-import { Route } from 'react-router-dom'
 import './App.css'
 import SearchBooks from './SearchBooks'
 import ListBooks from './ListBooks'
 
-class BooksApp extends React.Component {
-  state = {
-    books: []
+class BooksApp extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { books: [] }
   }
 
-  //fetch books from the API
+  // fetch books from the API
   componentDidMount() {
-    BooksAPI.getAll().then((books) => {
+    BooksAPI.getAll().then(books => {
       this.setState({ books })
     })
   }
 
-  //udate shelf to current shelf in the API
-  //set the state of the book to current shelf
+  // add the book to the right shelf
   updateBookShelf = (book, shelf) => {
+    const currentBook = { ...book, shelf }
     BooksAPI.update(book, shelf).then(() => {
-      book.shelf = shelf
       this.setState(state => ({
-        books: state.books.filter(b => 
-          b.id !== book.id).concat([book])
+        books: state.books.map(b => b.id !== currentBook.id ? b : currentBook)
       }))
     })
   }
@@ -34,19 +33,22 @@ class BooksApp extends React.Component {
 
     return (
       <div className="app">
-        <Route exact path="/search" render={() => (
-          <SearchBooks 
-            books={books} 
-            updateBookShelf={this.updateBookShelf}
-          />
-        )}/>
-       
-        <Route exact path="/" render={() => (
-          <ListBooks 
-            books={books} 
-            updateBookShelf={this.updateBookShelf}
-          />
-        )}/>
+        <Switch>
+          <Route exact path="/search" render={() => (
+            <SearchBooks 
+              books={books} 
+              updateBookShelf={this.updateBookShelf}
+            />
+          )}/>
+        
+          <Route exact path="/" render={() => (
+            <ListBooks 
+              books={books} 
+              updateBookShelf={this.updateBookShelf}
+            />
+          )}/>
+          <Redirect to="/" />
+        </Switch>
       </div>
     )
   }
