@@ -8,11 +8,121 @@ body, .app {
   background: white;
 }
 
+/*
+// theme colors
+.primary {
+  color: #2e7c31; // green
+}
+
+.primary-dark {
+  color: #004f04;
+}
+
+.primary-light {
+  color: #60ac5d;
+}
+
+.secondary {
+  color: #c9226c; // pink
+}
+
+.secondary-dark {
+  color: #930041;
+}
+
+.secondary-light {
+  color: #ff5d9a;
+}
+
+.primary-bg {
+  background-color: #2e7c31;
+  color: #fff;
+}
+
+.primary-dark-bg {
+  background-color: #2e7c31;
+  color: #fff;
+}
+
+.primary-light-bg {
+  background-color: #60ac5d;
+  color: #000;
+}
+
+.secondary-bg {
+  background-color: #c9226c;
+  color: #fff;
+}
+
+.secondary-dark-bg {
+  background-color: #c9226c;
+  color: #fff;
+}
+
+.secondary-light-bg {
+  background-color: #ff5d9a;
+  color: #000;
+}
+
+.default {
+  color: #262626;
+}
+
+.default-light {
+  color: #7b7b7b;
+}
+
+.default-bg {
+  background-color: #f5f5f5;
+}
+
+// theme grid
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  padding: 1em;
+}
+
+// theme buttons 
+.action-button-lg {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.action-button-lg-icon {
+  width: 28px;
+  height: 28px;  
+}
+
+.action-button-sm {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.action-button-sm-icon {
+  width: 20px;
+  height: 20px;
+}
+*/
+
 /* main page */
 
 .list-books-title {
   padding: 10px 0;
-  background: #2e7c31;
+  background: #818181;
   text-align: center;
 }
 .list-books-title h1 {

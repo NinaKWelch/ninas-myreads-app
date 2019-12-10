@@ -1,5 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import FlexContainer from '../styles/FlexContainer'
+import Card from '../styles/Card'
+import Box from '../styles/Box'
+import Typography from '../styles/Typography'
 import Book from './Book'
 import reader from '../icons/book-reader.svg'
 
@@ -8,11 +12,15 @@ const OnShelf = ({ bookShelf, books, updateBookShelf }) => {
     const booksOnShelf = books.filter(book => book.shelf === shelf.name)
 
     if (booksOnShelf.length === 0) {
-      return <li><img src={reader} alt="no books on shelf" width="128" height="193" /></li>
+      return (
+        <Card as="li">
+          <img src={reader} alt="No books on shelf" width="128" height="250" />
+        </Card>
+      )
     }
     
     return booksOnShelf.map(book => (
-      <Book 
+      <Book
         key={book.id} 
         book={book} 
         updateBookShelf={updateBookShelf}
@@ -21,17 +29,22 @@ const OnShelf = ({ bookShelf, books, updateBookShelf }) => {
   }
 
   return (
-    <div className="bookshelf">
-      <h2 className="bookshelf-title">
-        {bookShelf.title}
-      </h2>
-
-      <div className="bookshelf-books">
-        <ol className="books-grid">
-          {arrangeBooks(bookShelf)}
-        </ol>
-      </div>
-    </div>
+    <FlexContainer as="section">
+      <Box align="center" my="1em" divider>
+        <Typography
+            color="primary"
+            weight="500"
+            as="h2"
+            gutterBottom
+          >
+            {bookShelf.title}
+        </Typography>
+      </Box>
+      
+      <FlexContainer as="ul">
+        {arrangeBooks(bookShelf)}
+      </FlexContainer>
+    </FlexContainer>
   )
 }
 

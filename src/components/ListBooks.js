@@ -1,7 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import Container from '../styles/Container'
+import Typography from '../styles/Typography'
+import { ActionButton } from '../styles/IconButton'
+import Header from './Header'
 import OnShelf from './OnShelf'
+
 
 const SearchBooks = ({ books, updateBookShelf }) => {
     const shelves = [
@@ -11,30 +16,38 @@ const SearchBooks = ({ books, updateBookShelf }) => {
     ]
 
     return (
-      <div className="list-books">
-        <div className="list-books-title">
-          <h1>MyReads</h1>
-        </div>
+      <>
+        <Header bgcolor="primary" raised={1}>
+          <Typography
+            color="white"
+            size="2em"
+            as="h1"
+            brand
+          >
+            MyReads
+          </Typography>
+        </Header>
         
-        <div className="list-books-content">
-          <div>
-            {shelves.map(shelf => (
-              <OnShelf
-                key={shelf.name}
-                bookShelf={shelf}
-                books={books}
-                updateBookShelf={updateBookShelf}
-              />
-            ))}
-          </div>
-        </div>
+        <Container>
+          {shelves.map(shelf => (
+            <OnShelf
+              key={shelf.name}
+              bookShelf={shelf}
+              books={books}
+              updateBookShelf={updateBookShelf}
+            />
+          ))}
+        </Container>
         
-        <div className="open-search">
-          <Link to="search">
-            Add a book
-          </Link>
-        </div>
-      </div>
+        <ActionButton
+          size="52px"
+          bgcolor="secondary"
+          raised={1}
+          as={Link}
+          to="search"
+          aria-label="Add a book"
+        />
+      </>
     )
 }
 

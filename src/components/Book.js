@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Card from '../styles/Card'
+import CardActions from '../styles/CardActions'
+import CardImage from '../styles/CardImage'
+import CardContent from '../styles/CardContent'
+import Typography from '../styles/Typography'
 import SelectShelf from './SelectShelf'
 
 class Book extends Component {
@@ -31,30 +36,43 @@ class Book extends Component {
     const { book } = this.props
     const { shelf } = this.state
 
-    const imgStyle = {
-      width: 128,
-      height: 193,
-      backgroundImage: book.imageLinks
-        ? `url(${book.imageLinks.thumbnail})`
-        : ''
-    }
-
     return (
-      <li>
-        <div className="book">
-          <div className="book-top">
-            <div className="book-cover" style={imgStyle} />
+      <Card as="li">
+        <CardActions>
+          <CardImage
+            bgImage={book.imageLinks ?
+            `url(${book.imageLinks.thumbnail})`
+              : ""
+            }
+          />
 
-            <SelectShelf shelf={shelf} handleChange={this.changeShelf} />
-          </div>
+          <SelectShelf shelf={shelf} handleChange={this.changeShelf} />
+        </CardActions>
 
-          <div className="book-title">{book.title}</div>
+        <CardContent>
+          <Typography
+            size="0.95em"
+            height="1.15em"
+            weight="500"
+            as="h5"
+          >
+            {book.title}
+          </Typography>
 
-          <div className="book-authors">
-            {book.authors ? book.authors.map(author => <span key={author}>{author}<br/></span>) : ''}
-          </div>
-        </div>
-      </li>
+          {book.authors 
+            ? book.authors.map(author =>
+              <Typography
+                key={author}
+                size="0.9em"
+                weight="300"
+                as="h6"
+              >
+                {author}
+              </Typography>) 
+            : ""
+          }
+        </CardContent>
+      </Card>
     )
   }
 }

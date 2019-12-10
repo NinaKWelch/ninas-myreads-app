@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
-import './App.css'
 import SearchBooks from './components/SearchBooks'
 import ListBooks from './components/ListBooks'
 
@@ -13,26 +12,28 @@ class BooksApp extends Component {
 
   // fetch books from the API
   componentDidMount() {
-    BooksAPI.getAll().then(books => {
-      this.setState({ books })
-    })
+    BooksAPI.getAll()
+      .then(books => {
+        this.setState({ books })
+      })
   }
 
   // add the book to the right shelf
   updateBookShelf = (book, shelf) => {
     const currentBook = { ...book, shelf }
-    BooksAPI.update(book, shelf).then(() => {
-      this.setState(state => ({
-        books: state.books.map(b => b.id !== currentBook.id ? b : currentBook)
-      }))
-    })
+    BooksAPI.update(book, shelf)
+      .then(() => {
+        this.setState(state => ({
+          books: state.books.filter(b => b.id !== book.id).concat(currentBook)
+        }))
+      })
   }
 
   render() {
     const { books } = this.state
 
     return (
-      <div className="app">
+      <div>
         <Switch>
           <Route exact path="/search" render={() => (
             <SearchBooks 

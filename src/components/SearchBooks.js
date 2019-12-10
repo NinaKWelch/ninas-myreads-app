@@ -2,8 +2,14 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import * as BooksAPI from '../BooksAPI'
+import FlexContainer from '../styles/FlexContainer'
+import FlexItem from '../styles/FlexItem'
+import { BackButton } from '../styles/IconButton'
+import { SearchBar } from '../styles/Bar'
+import Header from './Header'
 import Book from './Book'
 import reader from '../icons/book-reader.svg'
+
 
 class SearchBooks extends Component {
   constructor(props) {
@@ -33,38 +39,47 @@ class SearchBooks extends Component {
     const { query, bookSearch } = this.state
 
     return (
-      <div className="search-books">
-        <div className="search-books-bar">
-          <Link className="close-search" to="/">
-            Close
-          </Link>
-          
-          <div className="search-books-input-wrapper">
-            <input type="text"
-              placeholder="search by title or author..."
+      <>
+        <Header justify="flex-start" raised={1}>
+          <FlexItem cols={2}>
+            <FlexContainer justify="flex-start">
+              <BackButton
+                  bgcolor="default"
+                  as={Link}
+                  to="/"
+                  aria-label="Close"
+                />
+            </FlexContainer>
+          </FlexItem>
+              
+          <FlexItem cols={8}>
+            <SearchBar
+              type="text"
+              placeholder="Search by title or author..."
               value={query}
               onChange={e => this.updateQuery(e.target.value)}
+              border
             />
-          </div>
-        </div>
+          </FlexItem>
+        </Header>
         
         {bookSearch.length > 0 ?
-          <div className="search-books-results">
-            <ol className="books-grid">
-              {bookSearch.map(book => (
-                <Book
-                  key={book.id}
-                  book={book}
-                  updateBookShelf={updateBookShelf}
-                />
-              ))}
-            </ol>
-          </div> :
-          <div className="search-books-filler">
-            <img src={reader} alt="" className="search-books-filler-icon" />
-          </div>
+          <FlexContainer>
+            {bookSearch.map(book => (
+              <Book
+                key={book.id}
+                book={book}
+                updateBookShelf={updateBookShelf}
+              />        
+            ))}
+          </FlexContainer> :
+          <FlexContainer>
+            <FlexItem cols={3}>
+              <img src={reader} alt="" style={{ marginTop: "30vh" }} />
+            </FlexItem> 
+          </FlexContainer>
         }
-      </div>
+      </>
     )
   }
 }

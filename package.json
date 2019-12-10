@@ -19,13 +19,15 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "^3.3.0",
     "react-image-input": "^0.1.0",
     "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.3.0",
     "sort-by": "^1.2.0",
+    "styled-components": "^4.4.1",
     "typescript": "^3.7.3"
   },
   "devDependencies": {
+    "babel-plugin-macros": "^2.8.0",
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.7.0",
