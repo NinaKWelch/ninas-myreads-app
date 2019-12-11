@@ -20,9 +20,11 @@ GitHub pages don't support routers that use the HTML5 pushState history API unde
 
 ## Screenshots
 
-![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533500097/myreads_1_rxgoun.png)
-![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533500085/myreads_3_q2lg4c.png)
-![](http://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1533497131/myreads_2_ufxj4v.png)
+![](https://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1576101595/ninas-myreads-app_2_njz0au.png)
+![](https://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1576101595/ninas-myreads-app_3_sa0lo1.png)
+![](https://res.cloudinary.com/ninaw/image/upload/c_scale,w_280/v1576101586/ninas-myreads-app_4_lfpubz.png)
+![](https://res.cloudinary.com/ninaw/image/upload/c_scale,w_420/v1576101590/ninas-myreads-app_5_d5qq3m.png)
+![](https://res.cloudinary.com/ninaw/image/upload/c_scale,w_420/v1576101593/ninas-myreads-app_6_w7ekb5.png)
 
 ## How to Install
 
@@ -30,19 +32,11 @@ GitHub pages don't support routers that use the HTML5 pushState history API unde
 2. Run `npm install` to install dependencies
 3. Run `npm start` to view
 
-## How I Built This
-
-There is a step by step guide to how I built this project at [my wiki page](https://github.com/NinaKWelch/ninas-myreads-app/wiki/Step-by-Step-Guide).
-
-## TODO
-
-* Add more components: SearchBooks, ListBooks and BookShelf
-
 ## Resources
 
 * [React Step by Step](https://reactjs.org/docs/hello-world.html)
 * [Fetching API Data](https://blog.hellojs.org/fetching-api-data-with-react-js-460fe8bbf8f2)
-* [FEND P7: My Reads: A Book Tracking App with Edoh](https://www.youtube.com/watch?time_continue=2959&v=PF8fCAKR0-I)
+
 
 ## Starter Template
 
