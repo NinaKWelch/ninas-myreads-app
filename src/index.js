@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import AppTheme from './AppTheme'
 import App from './App'
 import theme from './theme'
+import serviceWorker from './serviceWorker'
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
@@ -16,3 +17,5 @@ ReactDOM.render(
   </ThemeProvider>,
   document.getElementById('root')
 )
+
+serviceWorker()
