@@ -81,7 +81,7 @@ export default function register() {
                 checkValidServiceWorker(swUrl)
 
                 navigator.serviceWorker.ready.then(() => {
-                    console.log('This web app is being served cache-first by a service ' + 'worker.')
+                    console.log('This web app is being served cache-first by a service worker.')
                 })
             } else {
                 registerValidSW(swUrl)
