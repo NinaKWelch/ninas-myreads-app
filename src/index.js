@@ -7,7 +7,6 @@ import AppTheme from './AppTheme'
 import App from './App'
 import theme from './theme'
 
-
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <BrowserRouter>
