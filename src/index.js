@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import AppTheme from './AppTheme'
 import App from './App'
 import theme from './theme'
-import serviceWorker from './serviceWorker'
+import registerServiceWorker from './registerServiceWorker'
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
@@ -18,4 +18,4 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-serviceWorker()
+registerServiceWorker()
