@@ -10,14 +10,14 @@ const theme = {
       dark: '#004f04'
     },
     secondary: {
-    main: '#c9226c',
-    light: '#ff5d9a',
-    dark: '#930041'
+      main: '#c9226c',
+      light: '#ff5d9a',
+      dark: '#930041'
     },
     default: {
-        main: '#7b7b7b',
-        light: '#f5f5f5',
-        dark: '#262626'
+      main: '#7b7b7b',
+      light: '#f5f5f5',
+      dark: '#262626'
     }
   },
   typography: {

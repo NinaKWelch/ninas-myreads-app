@@ -22,11 +22,7 @@ const SelectShelf = ({ shelf, handleChange }) => {
   }
 
   return (
-    <SelectButton
-      bgcolor="primary"
-      raised={1}
-      aria-label="Choose a shelf"
-    >
+    <SelectButton bgcolor="primary" raised={1} aria-label="Choose a shelf">
       <label htmlFor="bookshelves" style={labelStyle}>
         Choose a shelf:
       </label>
@@ -40,7 +36,7 @@ const SelectShelf = ({ shelf, handleChange }) => {
       >
         <optgroup label="Choose a shelf...">
           <option value="currentlyReading">Currently Reading</option>
-          
+
           <option value="wantToRead">Want to Read</option>
 
           <option value="read">Read</option>
@@ -53,12 +49,12 @@ const SelectShelf = ({ shelf, handleChange }) => {
 }
 
 SelectShelf.propTypes = {
-  shelf: PropTypes.string,  
-  handleChange: PropTypes.func.isRequired,
+  shelf: PropTypes.string,
+  handleChange: PropTypes.func.isRequired
 }
 
 SelectShelf.defaultProps = {
-  shelf: "none"
-};
+  shelf: 'none'
+}
 
-export default SelectShelf 
+export default SelectShelf

@@ -4,20 +4,21 @@ import PropTypes from 'prop-types'
 import * as BooksAPI from '../BooksAPI'
 import FlexContainer from '../styles/FlexContainer'
 import FlexItem from '../styles/FlexItem'
+import Box from '../styles/Box'
+import Typography from '../styles/Typography'
 import { BackButton } from '../styles/IconButton'
 import { SearchBar } from '../styles/Bar'
 import Header from './Header'
 import Book from './Book'
 import reader from '../icons/book-reader.svg'
 
-
 class SearchBooks extends Component {
   constructor(props) {
     super(props)
-    this.state = { 
+    this.state = {
       query: '',
       bookSearch: []
-     }
+    }
   }
 
   // update search to match the input
@@ -26,10 +27,10 @@ class SearchBooks extends Component {
 
     // show matching books
     if (query) {
-      BooksAPI.search(query).then(books => 
+      BooksAPI.search(query).then(books =>
         books.length > 0
-        ? this.setState({ bookSearch: books })
-        : this.setState({ bookSearch: [] })
+          ? this.setState({ bookSearch: books })
+          : this.setState({ bookSearch: [] })
       )
     }
   }
@@ -44,41 +45,48 @@ class SearchBooks extends Component {
           <FlexItem cols={2}>
             <FlexContainer justify="flex-start">
               <BackButton
-                  bgcolor="default"
-                  as={Link}
-                  to="/"
-                  aria-label="Close"
-                />
+                bgcolor="default"
+                as={Link}
+                to="/"
+                aria-label="Close"
+              />
             </FlexContainer>
           </FlexItem>
-              
+
           <FlexItem cols={8}>
             <SearchBar
               type="text"
               placeholder="Search by title or author..."
               value={query}
               onChange={e => this.updateQuery(e.target.value)}
+              aria-label="Search"
               border
             />
           </FlexItem>
         </Header>
-        
-        {bookSearch.length > 0 ?
+
+        {bookSearch.length > 0 ? (
           <FlexContainer>
             {bookSearch.map(book => (
               <Book
                 key={book.id}
                 book={book}
                 updateBookShelf={updateBookShelf}
-              />        
+              />
             ))}
-          </FlexContainer> :
-          <FlexContainer>
-            <FlexItem cols={3}>
-              <img src={reader} alt="" style={{ marginTop: "30vh" }} />
-            </FlexItem> 
           </FlexContainer>
-        }
+        ) : (
+          <FlexContainer>
+            <Box my="5em" align="center">
+              <Typography size="2.5em" color="primary" weight="500" as="h3">
+                Find books to read!
+              </Typography>
+            </Box>
+            <FlexItem cols={3}>
+              <img src={reader} alt="" />
+            </FlexItem>
+          </FlexContainer>
+        )}
       </>
     )
   }

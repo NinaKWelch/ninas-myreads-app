@@ -1,34 +1,47 @@
 {
-    "extends": [
-      "react-app",
-      "airbnb",
-      "prettier",
-      "prettier/react"
+  "extends": [
+    "react-app",
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": [
+    "prettier",
+    "better-styled-components"
+  ],
+  "rules": {
+    //no semicolons at the end of every statement
+    "semi": 0,
+    //allow jsx in both file extensions
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "prettier/prettier": [
+      "error", {
+        "semi": false,
+        "singleQuote": true
+      }
     ],
-    "plugins": [
-      "prettier"
-    ],
-    "rules": {
-      //no semicolons at the end of every statement
-      "semi": 0,
-      //allow jsx in both file extensions
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-      /*"prettier/prettier": [
-        "error", {
-          "semi": false,
-          "singleQuote": true
-        }
-      ],*/
-      "jsx-a11y/label-has-associated-control": [ "error", {
-        "required": {
-          "some": [ "nesting", "id"  ]
-        }
-      }],
-      "jsx-a11y/label-has-for": [ "error", {
-        "required": {
-          "some": [ "nesting", "id"  ]
-        }
-      }],
-      "no-console": "off"
-    }
+    "jsx-a11y/label-has-associated-control": [ "error", {
+      "required": {
+        "some": [ "nesting", "id"  ]
+      }
+    }],
+    "jsx-a11y/label-has-for": [ "error", {
+      "required": {
+        "some": [ "nesting", "id"  ]
+      }
+    }],
+    "no-console": "off",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [{
+          "name": "styled-components",
+          "message": "Please import from styled-components/macro."
+        }],
+        "patterns": [
+          "!styled-components/macro"
+        ]
+      }
+    ]
   }
+}
