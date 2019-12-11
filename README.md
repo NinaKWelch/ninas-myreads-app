@@ -12,7 +12,7 @@ You can move the books from one shelf to another or remove them altogeher.
 
 ## Website
 
-[https://rocky-woodland-41546.herokuapp.com/](https://rocky-woodland-41546.herokuapp.com/)
+[https://ninas-myreads-app.herokuapp.com/](https://ninas-myreads-app.herokuapp.com/)
 
 Create-react-app can be deployed on Heroku with zero configuration. More info [here](https://blog.heroku.com/deploying-react-with-zero-configuration).
 
